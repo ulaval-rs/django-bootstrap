@@ -29,6 +29,7 @@ THIRD_PARTY_APPS = [
     "rest_framework.authtoken",
     "django_q",
     "jsoneditor",
+    "corsheaders",
 ]
 
 LOCAL_APPS = []
@@ -135,5 +136,9 @@ REST_FRAMEWORK = {
         "rest_framework_jwt.authentication.TokenAuthentication",
         "rest_framework.authentication.SessionAuthentication",
         "rest_framework.authentication.BasicAuthentication",
+        "rest_framework_simplejwt.authentication.JWTAuthentication",
     ),
 }
+
+# CORS configuration
+CORS_ORIGIN_ALLOW_ALL = True
