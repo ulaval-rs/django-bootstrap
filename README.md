@@ -14,7 +14,7 @@ A simple [Django 3](https://www.djangoproject.com/) project with sane defaults t
 ## Usage (simple)
 1. `docker compose build` and `docker compose up` to run the project
 2. Visit http://localhost:8080/admin/ to login using admin:secret as credentials
-3. Connect to the container suing `docker compose exec api bash`
+3. Connect to the container using `docker compose exec api bash`
 4. Run tests in the container using `pytest`.
 5. Create new apps in the container using `python manage.py startapp my_app`
 6. Put new apps in backend/apps/ and edit their apps.py file to add `apps.` in front of their app name (ie. `name = "my_app"` becomes `name = "apps.my_app"`)
