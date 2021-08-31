@@ -21,10 +21,10 @@ COPY . /usr/src
 
 RUN python -m compileall .
 
-# For openshift. Remove if deploying to AWS
-RUN chmod -R 775 /usr/src
-RUN chown -R 1000:root /usr/src
-USER 1000
+# # For openshift. Remove if deploying to AWS
+# RUN chmod -R 775 /usr/src
+# RUN chown -R 1000:root /usr/src
+# USER 1000
 
 # For openshift. Remove if deploying to AWS
 CMD gunicorn --bind 0.0.0.0:8080 api.wsgi
