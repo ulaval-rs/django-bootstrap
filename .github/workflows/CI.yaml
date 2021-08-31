@@ -1,0 +1,24 @@
+name: Test
+
+on:
+  push:
+    branches: [ master, main, develop]
+  pull_request:
+    branches: [ master, main, develop]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+    strategy:
+      max-parallel: 4
+      matrix:
+        python-version: [ 3.9 ]
+    steps:
+      - uses: actions/checkout@v2
+      - name: Build
+        run: |
+          docker-compose build --no-cache
+      - name: Tests
+        run: |
+          docker-compose run --rm api pytest

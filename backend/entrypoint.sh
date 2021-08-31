@@ -10,12 +10,12 @@ if [ ! -z "$DB_HOST" ]; then
     sleep 1
   done
   >&2 echo "Waiting for database connection... Done"
+fi
 
-  if [ $DJANGO_MANAGE_MIGRATE = 'on' ]; then
-      python manage.py migrate --noinput && \
-      python manage.py createcachetable
-      python manage.py createsuperuser --noinput
-  fi
+if [ $DJANGO_MANAGE_MIGRATE = 'on' ]; then
+  python manage.py migrate --noinput && \
+  python manage.py createcachetable
+  python manage.py createsuperuser --noinput
 fi
 
 exec "$@"
