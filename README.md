@@ -1,4 +1,5 @@
 # Bootstrap Django
+![example workflow](https://github.com/ulaval-rs/django-bootstrap/actions/workflows/CI.yaml/badge.svg)
 A simple [Django 3](https://www.djangoproject.com/) project with sane defaults to get you started. Powered by [docker](https://www.docker.com/) and [compose](https://github.com/docker/compose).
 
 ## Features
