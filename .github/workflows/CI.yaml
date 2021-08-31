@@ -21,10 +21,7 @@ jobs:
           docker-compose build --no-cache
       - name: Run
         run: |
-          docker-compose up -d
+          docker-compose run --rm api python manage.py migrate
       - name: Tests
         run: |
-          docker-compose exec api pytest
-      - name: Stop
-        run: |
-          docker-compose down
+          docker-compose run --rm api pytest
