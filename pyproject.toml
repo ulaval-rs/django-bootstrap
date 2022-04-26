@@ -29,3 +29,15 @@ flake8 = "^4.0.1"
 [build-system]
 requires = ["poetry-core>=1.0.0"]
 build-backend = "poetry.core.masonry.api"
+
+[tool.pytest.ini_options]
+DJANGO_SETTINGS_MODULE = "config.settings.local"
+python_files = ["test_*.py"]
+norecursedirs =[
+    "*.egg-info",
+    ".git",
+    ".github",
+    "__pycache__",
+    "infra",
+    "htmlcov",
+    "static"]
