@@ -3,21 +3,22 @@ version: "3.7"
 services:
 
   api:
-    build: ./backend
+    build: .
     env_file:
-      - .env
+      - local.env
     command: python manage.py runserver 0.0.0.0:8080
     ports:
       - 8080:8080
     volumes:
-      - ./backend:/usr/src
+      - .:/usr/src
     depends_on:
-      - db
+      - postgres
+      - redis
 
-  db:
+  postgres:
     image: postgres:13
     env_file:
-      - .env
+      - local.env
 
   redis:
     image: redis:6.2.4
